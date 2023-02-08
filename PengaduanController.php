@@ -36,7 +36,7 @@ class PengaduanController extends ConnectPDO {
         $foto = $_FILES['foto']['name']; // Membuat variabel foto dan mengambil nama file yang diupload
         $tmp = $_FILES['foto']['tmp_name']; // Mengambil url/path folder tempat penyimpanan file sementara
 
-        $fotobaru = date('dmYHis').$foto; // Berfungsi untuk merename/mengganti foto dan tanggal
+        $fotobaru = date('dmYHis').$foto;
         
         $path = "img/".$fotobaru;
         if(move_uploaded_file($tmp, $path)){
@@ -138,10 +138,6 @@ $pengaduan = new PengaduanController();
 if (isset($_POST['store'])) {
     $pengaduan->store($_POST); // Merupakan parameter superglobal post(request) dan file
 }
-
-// if (isset($_POST['edit'])) {
-//     $pengaduan->edit($_GET);
-// }
 
 if (isset($_POST['update'])) {
     $pengaduan->update($_POST, $_GET['id']); // Merupakan parameter superglobal get(id) dan post(request)
