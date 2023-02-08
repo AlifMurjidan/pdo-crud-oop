@@ -15,6 +15,7 @@ $result = $pengaduan->index();
 </head>
 <body>
     <h1>List Pengaduan Masyarakat</h1>
+    <a href="create.php" class="btn btn-success" style="color: #000000;">Tambah</a>
     <hr>
     <?php if ($result != null) : ?>
         <?php foreach ($result as $index) : ?>
@@ -32,10 +33,10 @@ $result = $pengaduan->index();
             <?php endif ; ?></td><br>
             
             <br>
-                    <a href="show.php?id=<?= $index->id_pengaduan ?>" style="color: #000000;text-decoration:none">Detail</a>
+                    <a href="show.php?id=<?= $index->id_pengaduan ?>" style="color: #000000;">Detail</a>
                     <!-- <a href="edit.php?id=<?= $index->id_pengaduan ?>">Edit</a> -->
                     <a href="delete.php?id=<?= $index->id_pengaduan?>" 
-                    class="btn btn-danger btn-md">Hapus</a>
+                    class="btn btn-danger btn-md" style="color: #000000;">Hapus</a>
                     <hr>
         </div>
         </a>
@@ -44,7 +45,6 @@ $result = $pengaduan->index();
     <?php else : ?>
         <h3>List Pengaduan Masih Kosong</h3>
     <?php endif; ?>
-    <a href="create.php" class="btn btn-success">Tambah</a>
 </body>
 </html>
 
