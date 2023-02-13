@@ -58,7 +58,7 @@ class MasyarakatController extends ConnectPDO {
 
                     echo "<script>
                     alert('Berhasil mendaftarkan user')
-                    window.location.href='view/masyarakat/index.php'
+                    window.location.href='view/masyarakat/login.php'
                     </script>";
                 } else {
                     echo "<script>
@@ -97,7 +97,7 @@ class MasyarakatController extends ConnectPDO {
             if (password_verify($password, $nik_result->password)) {
                 session_start();
                 $_SESSION['auth'] = $nik_result->nama;
-                header('Location: view/dashboard.php');
+                header('Location: view/pengaduan/index.php');
             } else {
                 echo "<script>
                 alert('Password yang anda masukan tidak sesuai!')
